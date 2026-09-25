@@ -1,0 +1,15 @@
+# Авторизация покупки: сумма операции фиксирована на 10000 копеек.
+# under / at / over: сумма меньше / равна / больше остатка лимита или баланса.
+# Счетчики дневного и месячного расхода задаются независимыми фикстурами.
+card_status: ACTIVE, INACTIVE, BLOCKED, EXPIRED
+amount_vs_daily: under, at, over
+amount_vs_monthly: under, at, over
+amount_vs_balance: under, at, over
+expiry: future, past
+terminal_type: POS, ATM, ECOM
+mcc: 5411, 5812, 5732, 4722
+
+# Для неактивной карты или истекшего срока лимиты и баланс не являются
+# предметом данной строки: изолируем первичную причину отказа.
+IF [card_status] <> "ACTIVE" THEN [amount_vs_daily] = "under" AND [amount_vs_monthly] = "under" AND [amount_vs_balance] = "under";
+IF [expiry] = "past" THEN [amount_vs_balance] = "under";

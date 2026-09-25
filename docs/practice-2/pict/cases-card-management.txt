@@ -1,0 +1,16 @@
+status_filter	bin_filter	limit	offset	fixture	deleted_fixture
+INACTIVE	500000	2	1	empty	none
+all	400000	50	1	mixed	one
+all	500000	1	0	mixed	none
+ACTIVE	all	2	5	mixed	one
+BLOCKED	400000	1	5	mixed	one
+INACTIVE	all	50	0	mixed	one
+BLOCKED	all	50	0	empty	none
+INACTIVE	400000	1	5	empty	none
+all	all	1	1	empty	none
+BLOCKED	400000	2	0	mixed	one
+all	500000	50	5	mixed	one
+BLOCKED	500000	1	1	mixed	one
+all	500000	2	1	mixed	none
+ACTIVE	500000	1	1	empty	none
+ACTIVE	400000	50	0	mixed	one

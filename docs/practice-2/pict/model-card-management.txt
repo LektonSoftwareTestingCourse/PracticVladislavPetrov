@@ -1,0 +1,10 @@
+# Список карт: проверяем сочетания фильтров, пагинации и состояния набора.
+# Пустой набор не содержит удаленных карт.
+status_filter: all, ACTIVE, INACTIVE, BLOCKED
+bin_filter: all, 400000, 500000
+limit: 1, 2, 50
+offset: 0, 1, 5
+fixture: empty, mixed
+deleted_fixture: none, one
+
+IF [fixture] = "empty" THEN [deleted_fixture] = "none";
